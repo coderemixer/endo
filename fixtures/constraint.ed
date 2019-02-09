@@ -1,0 +1,7 @@
+constraint Content(min: Integer, max: Integer): String {
+  self.length > min and self.length < max
+}
+
+json ConstraintTest() {
+  content: Content(0, 255),
+}

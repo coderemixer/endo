@@ -1,0 +1,6 @@
+json SelfAndParams(hello='Hello') {
+  person1: {
+    name: 'Alice',
+    welcome: `${hello} ${self.name}!`,
+  },
+}

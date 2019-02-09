@@ -1,0 +1,18 @@
+json TypesAndOptional(
+  world='World',
+  str: String,
+  num: Number,
+  flt: Float,
+  int: Integer,
+  arr: Array<Integer>
+) {
+  hello: world,
+  str: str,
+  num: num,
+  flt: flt,
+  int: int,
+  opt?: num,
+  'opt?': num,
+  'opt2?'?: num,
+  arr: arr,
+}
