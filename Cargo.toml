@@ -6,7 +6,7 @@ build = "src/build.rs"
 
 [lib]
 name = "endo"
-crate-type = ["staticlib", "cdylib"]
+crate-type = ["rlib", "cdylib", "staticlib"]
 
 [build-dependencies]
 lalrpop = "0.16.3"

@@ -1,0 +1,30 @@
+use std::str::FromStr;
+use ast::{Expr, Opcode};
+
+grammar;
+
+// pub Program: i32 = {
+//     Expr,
+// }
+
+pub Expr: Box<Expr> = {
+    <l:Expr> "+" <r:Factor> => Box::new(Expr::Op(l, Opcode::Add, r)),
+    <l:Expr> "-" <r:Factor> => Box::new(Expr::Op(l, Opcode::Sub, r)),
+    <l:Expr> "." <r:Id> => Box::new(Expr::Op(l, Opcode::Member, Box::new(Expr::Id(r)))),
+    Factor,
+    "(" <t:Expr> ")" => t,
+};
+
+Factor: Box<Expr> = {
+    <l:Factor> "*" <r:Term> => Box::new(Expr::Op(l, Opcode::Mul, r)),
+    <l:Factor> "/" <r:Term> => Box::new(Expr::Op(l, Opcode::Div, r)),
+    Term,
+};
+
+Term: Box<Expr> = {
+    <n:Num> => Box::new(Expr::Number(n)),
+    <n:Id>  => Box::new(Expr::Id(n)),
+};
+
+Num: i32 = <s:r"[0-9]+"> => i32::from_str(s).unwrap();
+Id:  Box<str> = <s:r"[A-Za-z]+"> => String::from(s).into_boxed_str();

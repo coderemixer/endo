@@ -6,7 +6,7 @@ The Final Approach Before API Delivering [WIP]
 
 ## Roadmap
 
-- [ ] Define Syntax with Examples and EBNF
+- [ ] Define Syntax with Examples and LALRPOP
 - [ ] Implement Parser in Rust
 - [ ] Implement Validator and Generator in Rust
 - [ ] Implement C Extension Header
