@@ -2,6 +2,7 @@
 name = "endo"
 version = "0.1.0"
 authors = ["Delton Ding <dsh0416@gmail.com>"]
+build = "src/build.rs"
 
 [lib]
 name = "endo"

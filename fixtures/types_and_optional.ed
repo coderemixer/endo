@@ -1,18 +1,14 @@
-json TypesAndOptional(
+view TypesAndOptional(
   world='World',
-  str: String,
+  str_alias: String,
+) {
+  hello: world,
+  str: str_alias,
   num: Number,
   flt: Float,
   int: Integer,
-  arr: Array<Integer>
-) {
-  hello: world,
-  str: str,
-  num: num,
-  flt: flt,
-  int: int,
-  opt?: num,
-  'opt?': num,
-  'opt2?'?: num,
-  arr: arr,
+  opt?: Number,
+  'opt?': Number,
+  'opt2?'?: Number,
+  arr: Array<Integer>,
 }
